@@ -5,7 +5,7 @@ import { errorResponse } from "../error/error";
 
 export const jwtMiddleware = (
   req: AuthRequest,
-  res: Response,
+  _res: Response,
   next: NextFunction
 ) => {
   try {

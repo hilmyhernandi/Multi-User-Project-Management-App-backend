@@ -25,8 +25,7 @@ export const rateLimiter = rateLimit({
     },
   }),
   windowMs: 60 * 60 * 1000,
-  max: 2000
-  ,
+  max: 2000,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
@@ -34,7 +33,7 @@ export const rateLimiter = rateLimit({
     statusCode: 429,
     message: "Too many requests. Please try again later",
   },
-  handler: (req, res, next, options) => {
+  handler: (req, res, _next, options) => {
     loggerRedis.warn(`Rate limit exceeded for IP: ${req.ip}`);
     res.status(options.statusCode).json(options.message);
   },

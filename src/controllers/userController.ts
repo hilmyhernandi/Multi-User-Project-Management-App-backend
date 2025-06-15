@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import userService from "../service/userService";
 
 export const getAllUsers = async (
-  req: Request,
+  _req: Request,
   res: Response,
   next: NextFunction
 ) => {
