@@ -25,8 +25,7 @@ export const rateLimiter = rateLimit({
     },
   }),
   windowMs: 60 * 60 * 1000,
-  max: 2000
-  ,
+  max: 2000,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
